@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./inventarios # Ruta al Dockerfile del backend
+      dockerfile: Dockerfile
+    ports:
+      - "8083:8083" # Mapea el puerto 8080 del contenedor al 8080 local
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://aws-0-us-west-1.pooler.supabase.com:6543/postgres?user=postgres.ttodacbfxtgbfgpzodrq&password=EpsilonEridani21060@
+      SPRING_DATASOURCE_USERNAME: postgres.ttodacbfxtgbfgpzodrq
+      SPRING_DATASOURCE_PASSWORD: EpsilonEridani21060@
+      SPRING_DATASOURCE_DRIVER: org.postgresql.Driver
+    depends_on:
+      - frontend
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./inventario-app # Ruta al Dockerfile del frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4500:4500" # Mapea el puerto 80 del contenedor al 4200 local
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
