@@ -8,7 +8,7 @@ import { Producto } from './producto';
 })
 export class ProductoService {
 
-  private urlBase = "http://localhost:8083/inventario-app/productos";
+  private urlBase = "http://77.37.97.40:8083/inventario-app/productos";
 
   constructor(private clienteHttp: HttpClient) { }
 

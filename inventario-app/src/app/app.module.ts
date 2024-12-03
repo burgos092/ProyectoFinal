@@ -7,13 +7,16 @@ import { ProductoListaComponent } from './producto-lista/producto-lista.componen
 import { AgregarProductoComponent } from './agregar-producto/agregar-producto.component';
 import { FormsModule } from '@angular/forms';
 import { EditarProductoComponent } from './editar-producto/editar-producto.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductoListaComponent,
     AgregarProductoComponent,
-    EditarProductoComponent
+    EditarProductoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
